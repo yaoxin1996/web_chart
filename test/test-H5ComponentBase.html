@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      background: #000;
+    }
+    .phone {
+      width: 340px;
+      height: 540px;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -270px 0 0 -170px;
+    }
+  </style>
+  <script src="../js/lib/H5ComponentBase.js"></script>
+  <script src="../js/lib/jquery.js"></script>
+  <link rel="stylesheet" href="../css/H5ComponentBase.css">
+</head>
+<body>
+  <!-- 用于验证H5ComponentBase对象 （基本的图文组件） -->
+  <div class="phone"></div>
+  <script>
+    var cfg = {
+      type: 'base',
+      text: 'text1212',
+      width: 522,
+      height: 336,
+      bg: '../imgs/description_bg.gif',
+      css: {
+        left: 50,
+        top: 50,
+        opacity: 0,
+      },
+      animateIn: { top: 50, opacity: 1 },
+      animateOut: { top: 150, opacity: 0 },
+      center: true
+    }
+    var h5 = new H5ComponentBase('myName', cfg)
+    $('.phone').append(h5)
+
+    var load = true
+    $('body').click(function () {
+      load = !load
+      $('.h5_component').trigger( load ? 'onLeave' : 'onLoad')
+    })
+  </script>
+</body>
+</html>
