@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/jquery-ui.min.js"></script>
+    <script src="../js/lib/H5.js"></script>
+    <link rel="stylesheet" href="../css/H5.css">
+    <script src="../js/lib/H5ComponentBase.js"></script>
+    <link rel="stylesheet" href="../css/H5ComponentBase.css">
+    <script src="../js/lib/jquery.fullPage.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+    <script>
+        $(function () {
+            var h5 = new H5()
+            h5.addPage('face', '首页')
+                .addComponent('logo', {text: 'logo'})
+                .addComponent('slogan', {text: 'slogan'})
+            .addPage('desc', '核心理念')
+                .addComponent('caption', {text: '核心理念'})
+            .addPage('page-3')
+                // .addComponent('caption', {text: '课程方向分布'})
+            .loader()
+        })
+    </script>
+
+</body>
+</html>
